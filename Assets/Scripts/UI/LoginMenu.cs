@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -67,6 +67,7 @@ public class LoginMenu : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+        PhotonNetwork.IsMessageQueueRunning = false; // Set to false to only received buffered calls after we finish loading the game scene
         SceneManager.LoadScene("TestRoom");
     }
 
