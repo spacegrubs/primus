@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System.IO;
@@ -8,13 +7,13 @@ using System.IO;
 public class AgentNavigation : MonoBehaviour
 {
     // Inspector assigned variables
-    public AIWaypointNetowrk    WaypointNetowrk = null;
-    public int                  CurrentIndex = 0;
-    public bool                 HasPath = false;
-    public bool                 PathPending = false;
-    public bool                 PathStale = false;
-    public NavMeshPathStatus    PathStatus = NavMeshPathStatus.PathInvalid;
-    public AnimationCurve       JumpCurve = new AnimationCurve();
+    public AIWaypointNetwork    WaypointNetwork     = null;
+    public int                  CurrentIndex        = 0;
+    public bool                 HasPath             = false;
+    public bool                 PathPending         = false;
+    public bool                 PathStale           = false;
+    public NavMeshPathStatus    PathStatus          = NavMeshPathStatus.PathInvalid;
+    public AnimationCurve       JumpCurve           = new AnimationCurve();
 
     // Private memners
     private NavMeshAgent _navAgent = null;
@@ -24,19 +23,19 @@ public class AgentNavigation : MonoBehaviour
     {
         _navAgent = GetComponent<NavMeshAgent>();
         //* if waypoint network has no transforms assigned to it, don't error 
-        if (WaypointNetowrk == null) return;   
+        if (WaypointNetwork == null) return;   
         SetNextDestination(false);
     }
 
     void SetNextDestination(bool icnrement){
-        if (!WaypointNetowrk) return;
+        if (!WaypointNetwork) return;
 
         int incStep = icnrement ? 1:0;
         Transform nextWaypointTransform = null;
         //* set the next waypoint as the one that that follows numerically. Otherwise, don't increment.
-        int nextWayPoint = (CurrentIndex + incStep >= WaypointNetowrk.Waypoints.Count)
+        int nextWayPoint = (CurrentIndex + incStep >= WaypointNetwork.Waypoints.Count)
             ? 0 : CurrentIndex + incStep;
-        nextWaypointTransform = WaypointNetowrk.Waypoints[nextWayPoint];
+        nextWaypointTransform = WaypointNetwork.Waypoints[nextWayPoint];
 
         //* as long as the location data for the next destination isn't empty, 
         //* tell the navAgent that its next destination is the next waypoint.
@@ -63,7 +62,7 @@ public class AgentNavigation : MonoBehaviour
                 return;
             }
         
-        if ((_navAgent.remainingDistance <= _navAgent.stoppingDistance && !PathPEnding) 
+        if ((_navAgent.remainingDistance <= _navAgent.stoppingDistance && !PathPending) 
             || PathStatus == NavMeshPathStatus.PathInvalid)
                 SetNextDestination(true);
             else 
@@ -71,10 +70,10 @@ public class AgentNavigation : MonoBehaviour
                 SetNextDestination(false);
 
         IEnumerator Jump(float duration){
-            OffMeshLink data = _navAgent.currentOffMeshLinkData;
-            Vector3 startPos = _navAgent.transform.position;
-            Vector3 endPos = data.endPos + (_navAgent.baseOffset * Vector3.up);
-            float time = 0.0f;
+            OffMeshLinkData data    = _navAgent.currentOffMeshLinkData;
+            Vector3 startPos        = _navAgent.transform.position;
+            Vector3 endPos          = data.endPos + (_navAgent.baseOffset * Vector3.up);
+            float time              = 0.0f;
 
             while (time < duration){
                 float t = time/duration;
