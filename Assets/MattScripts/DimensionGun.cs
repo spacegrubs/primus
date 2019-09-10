@@ -21,7 +21,7 @@ public class DimensionGun : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.DrawRay(transform.position, transform.forward * rayLength, Color.blue);
+        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * rayLength, Color.blue);
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -33,7 +33,7 @@ public class DimensionGun : MonoBehaviour
     {
         audioSource.PlayOneShot(shootingSound, shootingVolume);
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, rayLength, layerMask))
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rayLength, layerMask))
         {
             impactRef = Instantiate(impact, hit.point, Quaternion.identity);
             Destroy(impactRef, 1f);

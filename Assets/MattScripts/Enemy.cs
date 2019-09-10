@@ -40,7 +40,8 @@ public class Enemy : MonoBehaviour
 
         if(gameObject.tag == "Transport")
         {
-            gameObject.transform.localPosition += new Vector3(1, 0, 1);
+            //gameObject.transform.localPosition += new Vector3(1, 0, 1);
+            gameObject.transform.localPosition = new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
         }
     }
 }
