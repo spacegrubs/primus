@@ -26,8 +26,8 @@ public class PlayerTransformViewSmooth : MonoBehaviourPun, IPunObservable
 
         else
         {
-            transform.position = Vector3.Lerp(transform.position, _truePosition, Time.deltaTime * 10) + _characterController.velocity * Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(transform.rotation, _trueRotation, Time.deltaTime * 10);
+            transform.position = Vector3.Lerp(transform.position, _truePosition, Time.deltaTime * 15) + _characterController.velocity * Time.deltaTime;
+            transform.rotation = Quaternion.Lerp(transform.rotation, _trueRotation, Time.deltaTime * 15);
         }
     }
 

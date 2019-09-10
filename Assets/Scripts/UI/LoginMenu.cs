@@ -37,6 +37,8 @@ public class LoginMenu : MonoBehaviourPunCallbacks
         _connectionStatusText.gameObject.SetActive(true);
         _connectionStatusText.text = "Connecting...";
         _connectionStatusText.color = Color.yellow;
+        PhotonNetwork.SendRate = 20;
+        PhotonNetwork.SerializationRate = 20;
     }
 
     public override void OnConnectedToMaster()
