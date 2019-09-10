@@ -32,12 +32,12 @@ public class AgentNavigation : MonoBehaviour
 
         int incStep = icnrement ? 1:0;
         Transform nextWaypointTransform = null;
-        //* set the next waypoint as the one that that follows numerically. Otherwise, don't increment.
+        //* PATHING: set the next waypoint as the one that that follows numerically. Otherwise, don't increment.
         int nextWayPoint = (CurrentIndex + incStep >= WaypointNetwork.Waypoints.Count)
             ? 0 : CurrentIndex + incStep;
         nextWaypointTransform = WaypointNetwork.Waypoints[nextWayPoint];
 
-        //* as long as the location data for the next destination isn't empty, 
+        //* CONNECTION: as long as the location data for the next destination isn't empty, 
         //* tell the navAgent that its next destination is the next waypoint.
         if (nextWaypointTransform != null){
             CurrentIndex = nextWayPoint;
