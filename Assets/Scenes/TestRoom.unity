@@ -182,6 +182,26 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!1 &285708553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2534866581884222612, guid: 5bd13a42cdf79954190f996c5085f1c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 542613494}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &285708557
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285708553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2432090755550338912, guid: 5bd13a42cdf79954190f996c5085f1c7, type: 3}
 --- !u!1 &512420945
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 16.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2416733968201007103, guid: 5bd13a42cdf79954190f996c5085f1c7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bd13a42cdf79954190f996c5085f1c7, type: 3}
