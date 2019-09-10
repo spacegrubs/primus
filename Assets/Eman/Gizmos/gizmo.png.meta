@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: eb9d074289342e9419f0dbd482d986f1
+labels:
+- Prop
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
