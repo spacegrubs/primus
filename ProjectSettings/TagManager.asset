@@ -7,6 +7,11 @@ TagManager:
   - Enemy
   - Big
   - Transport
+  - Bullet
+  - PeaShooter
+  - DimensionGun
+  - Growth
+  - WeaponSelect
   layers:
   - Default
   - TransparentFX

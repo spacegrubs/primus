@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DimensionGun : MonoBehaviour
+public class PeaShooter : MonoBehaviour
 {
     [SerializeField] private float rayLength = 20f;
     [SerializeField] private float damage = 1f;
@@ -21,7 +21,7 @@ public class DimensionGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class DimensionGun : MonoBehaviour
 
                 if (enemyRef != null)
                 {
-                    enemyRef.Transport();
+                    enemyRef.TakeDamage(damage);
                 }
             }
 

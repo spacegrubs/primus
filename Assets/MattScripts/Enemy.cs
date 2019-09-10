@@ -10,12 +10,6 @@ public class Enemy : MonoBehaviour
     public AudioClip enemySound;
     [Range(0.0f, 1.0f)] [SerializeField] float enemyVolume = 1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -31,17 +25,23 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
-        if (gameObject.tag == "Big")
-        {
-            gameObject.transform.localScale += new Vector3(1, 1, 1);
-            gameObject.transform.localPosition += new Vector3(0, 1, 0);
-        }
+    public void Grow()
+    {
+        gameObject.transform.localScale += new Vector3(.01f, .01f, .01f);
+        gameObject.transform.localPosition += new Vector3(0, .01f, 0);
+        health += .10f;
+    }
 
-        if(gameObject.tag == "Transport")
-        {
-            //gameObject.transform.localPosition += new Vector3(1, 0, 1);
-            gameObject.transform.localPosition = new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
-        }
+    public void Shrink()
+    {
+        gameObject.transform.localScale += new Vector3(-.01f, -.01f, -.01f);
+        gameObject.transform.localPosition += new Vector3(0, -.01f, 0);
+        health -= .05f;
+    }
+    public void Transport()
+    {
+        gameObject.transform.localPosition = new Vector3(Random.Range(-10f, 10f), 1.4899f, Random.Range(-10f, 10f));
     }
 }
