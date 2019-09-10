@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 2641102264948330405}
   - component: {fileID: 8332034819817585451}
   - component: {fileID: 1186360394011102074}
+  - component: {fileID: 8195432581900540735}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Untagged
@@ -556,7 +557,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 2641102264948330405}
+  - {fileID: 8195432581900540735}
   - {fileID: 8332034819817585451}
   viewIdField: 0
   InstantiationId: 0
@@ -617,6 +618,18 @@ MonoBehaviour:
   - {fileID: 379623765173555131}
   _objectsToDestroy:
   - {fileID: 379623765166511705}
+--- !u!114 &8195432581900540735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379623765166511707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722194f94de1e344f838f093b99380ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &475786594321176489
 GameObject:
   m_ObjectHideFlags: 0
