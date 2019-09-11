@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ConfigureNotMine : MonoBehaviour
 {
-    [SerializeField] List<Component> _componentsToRemove;
-    [SerializeField] List<GameObject> _objectsToDestroy;
+    [SerializeField] private List<Component> _componentsToRemove;
+    [SerializeField] private List<GameObject> _objectsToDestroy;
 
     // Start is called before the first frame update
     void Start()
