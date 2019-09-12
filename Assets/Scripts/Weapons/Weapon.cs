@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 
+[RequireComponent(typeof(PhotonView))]
+
 public abstract class Weapon : MonoBehaviourPun
 {
     [Header("Weapon")]

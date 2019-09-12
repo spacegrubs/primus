@@ -25,9 +25,8 @@ public abstract class Gun : Weapon
     protected new void Start()
     {
         base.Start();
-
-        if(photonView.IsMine)
-            OnUsed += Fired;
+        if(photonView.IsMine)       //? if the object this script is attached to is mine,  
+            OnUsed += Fired;        //? then turn Onused the Fired() event.
     }
 
     private void Fired()
@@ -41,8 +40,11 @@ public abstract class Gun : Weapon
             Destroy(useEffect, 10);
         }
 
-        //_audioSource.PlayOneShot(_useSound, _useSoundVolume);
-        photonView.RPC("RPC_PlayFireSound", RpcTarget.AllViaServer);
+        
+        //! any method over the network will have photonView attached to the g.o.
+        photonView.RPC("RPC_PlayFireSound", RpcTarget.AllViaServer);    //? this is how you can make soundy things happen in the entire room
+        // photonView.RPC("RPC_PlayFireSound", RpcTarget.All);          //? this code is not running through the server
+        // photonView.RPC("RPC_PlayFireSound", RpcTarget.AllBuffered);  //? if a player joins after startgame and after this call...yikes. sorry m8
 
         if (_hasBulletTime)
         {
@@ -63,9 +65,10 @@ public abstract class Gun : Weapon
         }
     }
 
-    [PunRPC]
+    [PunRPC] //? this declares the following as an RPC method.
     protected void RPC_PlayFireSound()
     {
+        //* this actually plays the sound */
         _audioSource.PlayOneShot(_useSound, _useSoundVolume);
     }
 }

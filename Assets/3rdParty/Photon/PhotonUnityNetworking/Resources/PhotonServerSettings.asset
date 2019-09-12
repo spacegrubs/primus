@@ -37,5 +37,6 @@ MonoBehaviour:
   - RPC_PlayerLoaded
   - RPC_PlayFireSound
   - RPC_Grow
+  - RPC_ChangeSize
   DisableAutoOpenWizard: 1
   ShowSettings: 1
