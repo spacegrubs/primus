@@ -35,5 +35,7 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - RPC_PlayerLoaded
+  - RPC_PlayFireSound
+  - RPC_Grow
   DisableAutoOpenWizard: 1
   ShowSettings: 1

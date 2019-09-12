@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShrinkRay : MonoBehaviour
+public class ShrinkRay : Gun
 {
     [SerializeField] private float rayLength = 20f;
     [SerializeField] private GameObject impact;
@@ -22,23 +23,30 @@ public class ShrinkRay : MonoBehaviour
     [SerializeField] private AudioClip shootingSound;
     [Range(0.0f, 1.0f)] [SerializeField] float shootingVolume = .4f;
 
+    private void Start()
+    {
+        // Disable if not the owner
+        if (!GetComponentInParent<PhotonView>().IsMine)
+            enabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * rayLength, Color.blue);
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             ShootPrimary();
         }
 
-        if (Input.GetButton("Fire2"))
+        if (Input.GetButtonDown("Fire2"))
         {
             ShootSecondary();
         }
     }
 
-    void ShootPrimary()
+    private void ShootPrimary()
     {
         audioSource.PlayOneShot(shootingSound, shootingVolume);
 
@@ -51,24 +59,18 @@ public class ShrinkRay : MonoBehaviour
             {
                 enemyRef = hit.transform.GetComponent<Enemy>();
                 
-                if(enemyRef != null)
+                if(enemyRef)
                 {
                     enemyRef.Grow();
                 }
             }
-
-            print("I hit " + hit.collider.gameObject.name);
-        }
-        else
-        {
-            print("I missed!");
         }
 
         //working on a way to figure out a laserbeam to appear on shoot
         //lr.SetPosition(0, firePoint.transform.position);
     }
 
-    void ShootSecondary()
+    private void ShootSecondary()
     {
         audioSource.PlayOneShot(shootingSound, shootingVolume);
 
@@ -81,17 +83,11 @@ public class ShrinkRay : MonoBehaviour
             {
                 enemyRef = hit.transform.GetComponent<Enemy>();
 
-                if (enemyRef != null)
+                if (enemyRef)
                 {
                     enemyRef.Shrink();
                 }
             }
-
-            print("I hit " + hit.collider.gameObject.name);
-        }
-        else
-        {
-            print("I missed!");
         }
     }
 }

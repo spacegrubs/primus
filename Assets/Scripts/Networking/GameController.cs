@@ -10,7 +10,7 @@ public class GameController : MonoBehaviourPun
     void Start()
     {
         PhotonNetwork.IsMessageQueueRunning = true;
-        PhotonNetwork.Instantiate("FPSController", new Vector3(PhotonNetwork.CurrentRoom.PlayerCount * 3, 3, 0), Quaternion.identity);
+        PhotonNetwork.Instantiate("Player", new Vector3(PhotonNetwork.CurrentRoom.PlayerCount * 3, 3, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
