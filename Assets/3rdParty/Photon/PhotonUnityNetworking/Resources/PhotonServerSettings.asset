@@ -38,5 +38,6 @@ MonoBehaviour:
   - RPC_PlayFireSound
   - RPC_Grow
   - RPC_ChangeSize
+  - RPC_SpawnFireEffect
   DisableAutoOpenWizard: 1
   ShowSettings: 1

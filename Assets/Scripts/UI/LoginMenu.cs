@@ -61,10 +61,10 @@ public class LoginMenu : MonoBehaviourPunCallbacks
         {
             MaxPlayers = 8,
             IsOpen = true,
-            IsVisible = false
+            IsVisible = false,
         };
 
-        PhotonNetwork.JoinOrCreateRoom("_TEST_", roomOptions, TypedLobby.Default);
+        PhotonNetwork.JoinOrCreateRoom("_TEST001_", roomOptions, TypedLobby.Default);
     }
 
     public override void OnJoinedRoom()

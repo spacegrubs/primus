@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using DG.Tweening;
+using Photon.Pun;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,22 +30,24 @@ public abstract class Gun : Weapon
             OnUsed += Fired;        //? then turn Onused the Fired() event.
     }
 
+    protected new void Update()
+    {
+        base.Update();
+        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * _range, Color.red);
+    }
+
     private void Fired()
     {
-        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * _range, Color.red);
-
         if (_useEffect)
         {
-            GameObject useEffect = PhotonNetwork.Instantiate(ResourceUtils.GetPrefabResourcePath(_useEffect), _firePoint.transform.position, _firePoint.transform.rotation);
-            useEffect.transform.parent = _firePoint.transform;
-            Destroy(useEffect, 10);
+            //GameObject useEffect = PhotonNetwork.Instantiate(ResourceUtils.GetPrefabResourcePath(_useEffect), _firePoint.transform.position, _firePoint.transform.rotation);
+            //useEffect.transform.parent = _firePoint.transform;
+
+            photonView.RPC("RPC_SpawnFireEffect", RpcTarget.AllViaServer);
         }
 
-        
-        //! any method over the network will have photonView attached to the g.o.
-        photonView.RPC("RPC_PlayFireSound", RpcTarget.AllViaServer);    //? this is how you can make soundy things happen in the entire room
-        // photonView.RPC("RPC_PlayFireSound", RpcTarget.All);          //? this code is not running through the server
-        // photonView.RPC("RPC_PlayFireSound", RpcTarget.AllBuffered);  //? if a player joins after startgame and after this call...yikes. sorry m8
+        transform.DOPunchPosition(-Vector3.forward * 0.02f, 0.2f, 1);
+        photonView.RPC("RPC_PlayFireSound", RpcTarget.AllViaServer);
 
         if (_hasBulletTime)
         {
@@ -60,9 +63,14 @@ public abstract class Gun : Weapon
                 OnHitObject?.Invoke(hit.collider.gameObject, hit.point);
 
                 GameObject hitEffect = PhotonNetwork.Instantiate(ResourceUtils.GetPrefabResourcePath(_hitEffect), hit.point, Quaternion.identity);
-                Destroy(hitEffect, 10);
             }
         }
+    }
+
+    [PunRPC]
+    protected void RPC_SpawnFireEffect()
+    {
+        Instantiate(_useEffect, _firePoint.transform);
     }
 
     [PunRPC] //? this declares the following as an RPC method.

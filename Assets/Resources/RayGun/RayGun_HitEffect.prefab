@@ -4821,6 +4821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4558115579212013753}
   - component: {fileID: 6911735003463689833}
+  - component: {fileID: 4063989259039648907}
   m_Layer: 0
   m_Name: RayGun_HitEffect
   m_TagString: Untagged
@@ -4865,3 +4866,16 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &4063989259039648907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558115579212013756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae50dc02f9d1b304480ebd1ea00eab3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeToLive: 3

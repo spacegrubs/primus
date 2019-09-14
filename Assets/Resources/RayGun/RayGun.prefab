@@ -635,6 +635,7 @@ GameObject:
   - component: {fileID: 7967475651227666048}
   - component: {fileID: 1497250557327179958}
   - component: {fileID: 958192558842709762}
+  - component: {fileID: 3907746242670292312}
   m_Layer: 0
   m_Name: RayGun
   m_TagString: Untagged
@@ -712,10 +713,22 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 0
+  Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 3907746242670292312}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &3907746242670292312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6397769251463705747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d40ae9c308db543be4f3a4ff312eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
