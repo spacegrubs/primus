@@ -35,7 +35,7 @@ namespace RadicalForge.Blockout
         public static void Init()
         {
             var filesToDel = Directory
-                .GetFiles(Application.dataPath + "/Blockout/Editor/", "*", SearchOption.AllDirectories)
+                .GetFiles(Application.dataPath + "/3rdParty/Blockout/Editor/", "*", SearchOption.AllDirectories)
                 .Where(x => x.Contains("BlockoutBlockHelper.cs")).ToArray();
             for(int i = 0; i < filesToDel.Length; ++i)
                 File.Delete(filesToDel[i]);
