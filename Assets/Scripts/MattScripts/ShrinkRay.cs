@@ -58,7 +58,7 @@ public class ShrinkRay : Gun
             if (hit.collider.gameObject.tag == "Enemy")
             {
                 enemyRef = hit.transform.GetComponent<Enemy>();
-                
+                print("hit "+gameObject);
                 if(enemyRef)
                 {
                     enemyRef.Grow();

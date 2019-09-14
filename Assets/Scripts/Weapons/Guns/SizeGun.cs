@@ -25,10 +25,17 @@ public class SizeGun : Gun
 
     private void OnHit(GameObject hitObject, Vector3 hitPoint)
     {
+        print("hit: " + hitObject);
         Character character = hitObject.GetComponent<Character>();
-        if (character)
-        {
+        Objects anObject = hitObject.GetComponent<Objects>();
+        //RpcTarget rpcobject = hitObject.GetComponent<Objects>();
+
+        if (character){
             character.ChangeSize(growMode ? 1.5f : 0.5f);
-        }      
+        }  
+        if (anObject) {
+            anObject.ChangeSize(growMode ? 1.5f: 0.5f);
+        }
+
     }
 }

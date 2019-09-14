@@ -19,7 +19,7 @@ public class Character : MonoBehaviourPun
     {
         if (photonView.IsMine)
             Player = PhotonNetwork.LocalPlayer;
-
+            
         else
             Player = photonView.Owner;
 
