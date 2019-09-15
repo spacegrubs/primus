@@ -7,6 +7,7 @@ public class Aim : MonoBehaviourPun
 {
     [SerializeField] private Vector3 _offset;
 
+    //! this is never being used. 
     private Transform _target;
     private Animator _animator;
     private Transform _chest;

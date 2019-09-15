@@ -7,13 +7,17 @@ using System;
 
 public class OfflineNetwork : MonoBehaviourPunCallbacks
 {
+    public Transform spawnTransform;
+    private Vector3 spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
+        spawnPoint = spawnTransform.position;
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.NickName = "test";
         PhotonNetwork.SendRate = 20;
         PhotonNetwork.SerializationRate = 20;
+
     }
 
     public override void OnConnectedToMaster()
@@ -37,7 +41,7 @@ public class OfflineNetwork : MonoBehaviourPunCallbacks
 
      public override void OnJoinedRoom()
     {
-        PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
+        PhotonNetwork.Instantiate("Player", spawnPoint, Quaternion.identity);
     }
 
 }
