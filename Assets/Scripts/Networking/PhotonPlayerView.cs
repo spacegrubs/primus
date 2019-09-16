@@ -45,7 +45,7 @@ public class PhotonPlayerView : MonoBehaviourPun, IPunObservable
             _aim.ChestRotation = _chest.rotation;
         }
     }
-    
+
     void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
