@@ -28,6 +28,7 @@ public class SizeGun : Gun
         print("hit: " + hitObject);
         Character character = hitObject.GetComponent<Character>();
         Objects anObject = hitObject.GetComponent<Objects>();
+        Rigidbody rbody = hitObject.GetComponent<Rigidbody>();
         //RpcTarget rpcobject = hitObject.GetComponent<Objects>();
 
         if (character){
@@ -35,6 +36,7 @@ public class SizeGun : Gun
         }  
         if (anObject) {
             anObject.ChangeSize(growMode ? 1.5f: 0.5f);
+            rbody.isKinematic = false;
         }
 
     }

@@ -58,7 +58,7 @@ public abstract class Gun : Weapon
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(_firePoint.position, _firePoint.forward, out hit, _range, _layerMask))
+            if (Physics.Raycast(_firePoint.position, Camera.main.transform.forward, out hit, _range, _layerMask))
             {
                 OnHitObject?.Invoke(hit.collider.gameObject, hit.point);
 
