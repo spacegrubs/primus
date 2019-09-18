@@ -1453,6 +1453,7 @@ GameObject:
   - component: {fileID: 8959389735809362634}
   - component: {fileID: 4149774269347824313}
   - component: {fileID: 2024865581763713421}
+  - component: {fileID: 2026570558}
   m_Layer: 0
   m_Name: afloor
   m_TagString: Untagged
@@ -1521,6 +1522,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2026570558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299828529604237498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 831.4537, y: 831.45355, z: 101.51398}
+  m_Center: {x: -0.000045776364, y: -3.7064926e-12, z: 9.642471}
 --- !u!1 &311141120273080136
 GameObject:
   m_ObjectHideFlags: 0
