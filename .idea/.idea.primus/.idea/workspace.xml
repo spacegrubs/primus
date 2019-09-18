@@ -1,23 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f40b2c6c-baf1-4980-a328-91591f021a4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.primus/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.primus/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.primus/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.primus/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.primus/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.primus/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.primus/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParty/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3rdParty/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/GasStation/gasStation.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/GasStation/gasStation.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/gasStation-c.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/gasStation-c.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/gasStation.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/gasStation.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Cinemachine-staging.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Cinemachine-staging.unity" afterDir="false" />
-    </list>
+    <list default="true" id="f40b2c6c-baf1-4980-a328-91591f021a4d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568776975458</updated>
-      <workItem from="1568776985108" duration="2438000" />
+      <workItem from="1568776985108" duration="2716000" />
     </task>
     <servers />
   </component>
