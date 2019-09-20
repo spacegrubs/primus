@@ -8,7 +8,8 @@ public class ShrinkCast : MonoBehaviour {
     private Vector3 _punchScale = new Vector3(6,6,6);
     private Transform _sphere;
     private bool expanding;
-
+    private bool growMode;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,24 @@ public class ShrinkCast : MonoBehaviour {
         //expand the sphere
         _sphere.DOPunchScale(_punchScale, 1, 1);
         StartCoroutine("ResetSphereScale");
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        print("hit: " + other);
+        Character character = other.GetComponent<Character>();
+        Objects anObject = other.GetComponent<Objects>();
+        Rigidbody rbody = other.GetComponent<Rigidbody>();
+        //RpcTarget rpcobject = hitObject.GetComponent<Objects>();
+
+        if (character)
+        {
+            character.ChangeSize(growMode ? 1.5f : 0.5f);
+        }
+        if (anObject)
+        {
+            anObject.ChangeSize(growMode ? 1.5f : 0.5f);
+            rbody.isKinematic = false;
+        }   
     }
 
     IEnumerator ResetSphereScale(){
