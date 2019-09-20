@@ -25,6 +25,22 @@ public class ShrinkCast : MonoBehaviour {
         }
     }
 
+    void OnTriggerEnter(Collider other) {
+        print("hit: " + other);
+        Character character = other.GetComponent<Character>();
+        Objects anObject = other.GetComponent<Objects>();
+        Rigidbody rbody = other.GetComponent<Rigidbody>();
+        //RpcTarget rpcobject = hitObject.GetComponent<Objects>();
+
+        if (character){
+            character.ChangeSize(0.5f);
+        }  
+        if (anObject) {
+            anObject.ChangeSize(0.5f);
+            rbody.isKinematic = false;
+        }
+    }
+
     void ExpandSphere(){
         expanding = true;
         //expand the sphere
