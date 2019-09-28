@@ -41,7 +41,7 @@ public class OfflineNetwork : MonoBehaviourPunCallbacks
 
      public override void OnJoinedRoom()
     {
-        PhotonNetwork.Instantiate("Player", spawnPoint, Quaternion.identity);
+        PhotonNetwork.Instantiate("Player_TPC", spawnPoint, Quaternion.identity);
     }
 
 }
