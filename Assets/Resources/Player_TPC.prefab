@@ -24,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518253962}
-  m_LocalRotation: {x: -0.09580025, y: 0.52314913, z: 0.05932806, w: 0.8447589}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.095800236, y: 0.52314913, z: 0.05932808, w: 0.84475887}
+  m_LocalPosition: {x: -0.00000047683716, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1714876655}
@@ -99,7 +99,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556143272}
-  m_LocalRotation: {x: -0.05007234, y: 0.52690655, z: 0.031117043, w: 0.8478762}
+  m_LocalRotation: {x: -0.050072324, y: 0.5269065, z: 0.031117026, w: 0.8478762}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -174,7 +174,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061088789}
-  m_LocalRotation: {x: -0.019095259, y: 0.5276911, z: 0.011866465, w: 0.8491388}
+  m_LocalRotation: {x: -0.019095244, y: 0.5276911, z: 0.011866456, w: 0.8491388}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -375,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534054599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.59123, y: 0.6799998, z: -1.2796993}
+  m_LocalPosition: {x: -2.5912294, y: 0.6799998, z: -1.2796993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 518253964}
@@ -868,8 +868,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3000126226364076939}
-  m_LocalRotation: {x: -0.019095212, y: 0.5276911, z: 0.011866573, w: 0.84913886}
-  m_LocalPosition: {x: -2.59123, y: 0.6799998, z: -1.2796993}
+  m_LocalRotation: {x: -0.019095195, y: 0.5276911, z: 0.011866562, w: 0.8491388}
+  m_LocalPosition: {x: -2.5912294, y: 0.6799998, z: -1.2796993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3000126226503905493}
@@ -1635,7 +1635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c68cb12a33dcf04f89c3c161e743749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentsToRemove: []
+  _componentsToRemove:
+  - {fileID: 3000126226513899063}
+  - {fileID: 0}
   _objectsToDestroy: []
 --- !u!114 &75322126
 MonoBehaviour:
