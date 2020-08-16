@@ -43,35 +43,30 @@ public abstract class Weapon : MonoBehaviourPun
     public event Used OnUsed;
     #endregion
 
-    protected void Start()
-    {
+    protected void Start(){
         _owner = FindObjectsOfType<Character>().First(c => c.Player == PhotonNetwork.LocalPlayer);
         _audioSource = _owner?.GetComponent<AudioSource>();
         _currentAmmunition = _clipAmmunition;
         _currentMaxAmmunition = _maxAmmunition - _currentAmmunition > 0 ? _maxAmmunition - _currentAmmunition : 0;
     }
 
-    protected void Update()
-    {
+    protected void Update(){
         if(_cooldown > 0)
         {
             _cooldown -= Time.deltaTime;
         }
     }
 
-    public void Use()
-    {
+    public void Use(){
         if (!CanUse())
             return;
 
         _cooldown = 1 / _useSpeed;
 
-        if (_hasAmmunition)
-        {
+        if (_hasAmmunition) {
             _currentAmmunition -= 1;
 
-            if(_currentAmmunition == 0)
-            {
+            if(_currentAmmunition == 0){
                 Reload();
             }
         }

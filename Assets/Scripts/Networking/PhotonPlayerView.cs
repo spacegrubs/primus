@@ -36,7 +36,7 @@ public class PhotonPlayerView : MonoBehaviourPun, IPunObservable
             transform.localScale = Vector3.Lerp(transform.localScale, _trueScale, Time.deltaTime * 15);
         }
     }
-
+    
     void LateUpdate()
     {
         if (!photonView.IsMine && _animator.GetFloat("Speed") <= 0)

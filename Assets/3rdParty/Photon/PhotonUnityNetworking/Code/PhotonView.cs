@@ -30,6 +30,7 @@ namespace Photon.Pun
     [AddComponentMenu("Photon Networking/Photon View")]
     public class PhotonView : MonoBehaviour
     {
+        
         #if UNITY_EDITOR
         [ContextMenu("Open PUN Wizard")]
         void OpenPunWizard()
@@ -265,7 +266,6 @@ namespace Photon.Pun
                 // registration might be too late when some script (on this GO) searches this view BUT GetPhotonView() can search ALL in that case
                 PhotonNetwork.RegisterPhotonView(this);
             }
-
             this.didAwake = true;
         }
 

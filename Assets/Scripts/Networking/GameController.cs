@@ -14,7 +14,7 @@ public class GameController : MonoBehaviourPun
     {
         spawnPoint = spawnTransform.position;
         PhotonNetwork.IsMessageQueueRunning = true;
-        PhotonNetwork.Instantiate("Player", new Vector3(PhotonNetwork.CurrentRoom.PlayerCount * spawnPoint.x,spawnPoint.y,spawnPoint.z), Quaternion.identity);
+        PhotonNetwork.Instantiate("Player_TPC", new Vector3(PhotonNetwork.CurrentRoom.PlayerCount * spawnPoint.x,spawnPoint.y,spawnPoint.z), Quaternion.identity);
     }
 
     // Update is called once per frame

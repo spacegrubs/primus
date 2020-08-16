@@ -33,7 +33,7 @@ public abstract class Gun : Weapon
     protected new void Update()
     {
         base.Update();
-        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * _range, Color.red);
+        Debug.DrawRay(_firePoint.position, _firePoint.forward * _range, Color.red);
     }
 
     private void Fired()
@@ -58,7 +58,7 @@ public abstract class Gun : Weapon
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, _range, _layerMask))
+            if (Physics.Raycast(_firePoint.position, Camera.main.transform.forward, out hit, _range, _layerMask))
             {
                 OnHitObject?.Invoke(hit.collider.gameObject, hit.point);
 
